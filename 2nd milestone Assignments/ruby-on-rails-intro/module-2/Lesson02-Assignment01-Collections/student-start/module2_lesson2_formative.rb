@@ -10,3 +10,5 @@ p arr.select { |element| element % 3 == 0 }
 # and use `sort` and `reverse` methods to sort in descending order
 # Start with the line below and continue as 1 long method chain
 # p arr.select { |element| element % 3 == 0 }
+
+p (0..10000).to_a.select { |element| element % 3 == 0 }.reject { |element| element < 5000}.sort!.reverse!
