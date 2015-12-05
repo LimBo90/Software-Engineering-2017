@@ -48,9 +48,6 @@ class Solution
   #  equal to the highest_count_across_lines determined previously.
   attr_reader :analyzers, :highest_count_across_lines, :highest_count_words_across_lines, :line_number
 
-  def initialize
-  	@analyzers =[]
-  end
   # Implement the following methods in the Solution class.
   #* analyze_file() - processes 'test.txt' intro an array of LineAnalyzers and stores them in analyzers.
   #* calculate_line_with_highest_frequency() - determines the highest_count_across_lines and 
@@ -63,6 +60,7 @@ class Solution
   #* Create an array of LineAnalyzers for each line in the file
 
   def analyze_file()
+    @analyzers ||= []
   		if File.exist? 'test.txt'
   			line_number = 0
   			File.foreach('test.txt') do |line|
